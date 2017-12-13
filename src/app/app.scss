@@ -14,3 +14,205 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+* {
+    font-family: 'Montserrat';
+}
+
+.shadow {
+    box-shadow: 0.5px 1px 5px grey;
+}
+
+.no-style {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+
+    ion-row {
+        margin: 0 !important;
+    }
+}
+
+.mt-1 {
+    margin: 1em 0;
+}
+.w-100 {
+    width: 100% !important;
+}
+
+@mixin btnprop($bg, $text, $pad, $weight:bold, $width:100%) {
+    background: $bg;
+    color: $text;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: $pad;
+    font-size: 100%;
+    width: $width;
+    font-weight: $weight;
+}
+
+.btn-light {
+    @include btnprop(#{map-get($bgcolors, light) }, #{map-get($textcolors, primary) }, 10px, normal);
+}
+
+.btn-dark {
+    @include btnprop(#{map-get($map: $bgcolors, $key: dark)}, #{map-get($textcolors, secondary) }, 10px, bold, auto);
+}
+
+.btn-fb {
+    @include btnprop(#3b4aa9, #ffffff, 10px);
+}
+
+.btn-twitter {
+    @include btnprop(#079eef, #ffffff, 10px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.input {
+    padding: 10px;
+    background: #{map-get($bgcolors, light)};
+    border-radius: 5px;
+    ion-icon {
+        display: inline-block;
+        color: #{map-get($map: $textcolors, $key: light)}
+    }
+    input {
+        display: inline-block;
+        background: #{map-get($bgcolors, light)};
+        padding: 0;
+        margin: 0;
+        border: 0;
+        margin-left: 2%;
+        &[type="number"] {
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.fht { height: 100%; }
+
+.hv-centered, .hv-centered > ion-row {
+    @extend .fht;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            padding: 5% 0;
+        }
+    }
+}
+
+.select-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 120%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+    &:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+    /* When the radio button is checked, add a blue background */
+    & input:checked ~ .checkmark {
+        background-color: #{map-get($map: $bgcolors, $key: element)};
+    }
+  
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    /* Show the indicator (dot/circle) when checked */
+    & input:checked ~ .checkmark:after {
+        display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    & .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+  
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.flex {
+    display: flex;
+
+    div {
+        margin: 0 5px;
+    }
+}
+
+.flex-row-centered {
+    justify-content: center;
+}
+
+.flex-column-centered {
+    align-items: center;
+}
+
+$darker: #e73600;
+.atc-modal {
+    color:white;
+}

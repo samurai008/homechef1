@@ -13,6 +13,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
 // Shared Variables
@@ -41,6 +42,21 @@ $colors: (
   dark:       #222
 );
 
+$bgcolors: (
+  primary: #ffffff,
+  element: #ea5d05,
+  light: #f6f5f1,
+  blu: #c208ff,
+  dark: #e73600
+);
+
+$textcolors: (
+  primary: #000000,
+  secondary: #ffffff,
+  light: #cccbc6,
+  blu: #c208ff,
+  time: #21ce41,
+);
 
 // App iOS Variables
 // --------------------------------------------------

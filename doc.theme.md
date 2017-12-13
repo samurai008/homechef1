@@ -1,0 +1,12 @@
+### Colors
+## Background
+primary: #ffffff
+element: #ea5d05
+light: #f6f5f1
+darker: #e73600
+## Text
+primary: #000000
+secondary: #ffffff
+light: #cccbc6
+blue: #c208ff
+time: #21ce41

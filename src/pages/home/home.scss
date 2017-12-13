@@ -1,3 +1,54 @@
 page-home {
-
+    ion-grid {
+        margin: 1%;
+    }
+    .customCard {
+        position: relative;
+        border: 1px solid #{map-get($map: $textcolors, $key: light)};
+        box-shadow: 1px 1px 5px #cccbc6;
+        border-radius: 5px;
+        margin: 15px 0;
+        .discount-badge {
+            background: #{map-get($map: $textcolors, $key: blu)};
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #{map-get($map: $textcolors, $key: secondary)};
+            font-weight: bolder;
+            position: absolute;
+            right: 10px;
+            top: -25px;
+        }
+        ion-col {
+            text-align: left;
+            .thumbnail {
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                img {
+                    max-width: 100%;
+                }
+                border: 1px solid #{map-get($map: $bgcolors, $key: light)};
+                border-radius: 5px;
+                padding: 0;
+            }
+            .price {
+                span {
+                    padding: 2.5px;
+                    color: #{map-get($map: $textcolors, $key: secondary)};
+                    background: #{map-get($map: $textcolors, $key: time)};
+                }
+            }
+            .pin {
+                &, * {
+                    color: #{map-get($map: $textcolors, $key: light)};
+                }
+            }
+        }
+    }
 }
