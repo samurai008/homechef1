@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,7 +12,6 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
 * {
     font-family: 'Montserrat';
 }
@@ -29,7 +26,6 @@
     border: none;
     border-radius: 0;
     background: none;
-
     ion-row {
         margin: 0 !important;
     }
@@ -38,6 +34,7 @@
 .mt-1 {
     margin: 1em 0;
 }
+
 .w-100 {
     width: 100% !important;
 }
@@ -69,7 +66,12 @@
     @include btnprop(#079eef, #ffffff, 10px);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: bold;
 }
 
@@ -94,17 +96,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.fht { height: 100%; }
+.fht {
+    height: 100%;
+}
 
-.hv-centered, .hv-centered > ion-row {
+.hv-centered,
+.hv-centered>ion-row {
     @extend .fht;
-
     .container {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-
     ul {
         list-style: none;
         padding: 0;
@@ -125,12 +128,10 @@ h1, h2, h3, h4, h5, h6 {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     input {
         position: absolute;
         opacity: 0;
     }
-
     .checkmark {
         position: absolute;
         top: 0;
@@ -140,27 +141,23 @@ h1, h2, h3, h4, h5, h6 {
         background-color: #eee;
         border-radius: 50%;
     }
-
-    &:hover input ~ .checkmark {
+    &:hover input~.checkmark {
         background-color: #ccc;
     }
     /* When the radio button is checked, add a blue background */
-    & input:checked ~ .checkmark {
+    & input:checked~.checkmark {
         background-color: #{map-get($map: $bgcolors, $key: element)};
     }
-  
     /* Create the indicator (the dot/circle - hidden when not checked) */
     .checkmark:after {
         content: "";
         position: absolute;
         display: none;
     }
-    
     /* Show the indicator (dot/circle) when checked */
-    & input:checked ~ .checkmark:after {
+    & input:checked~.checkmark:after {
         display: block;
     }
-    
     /* Style the indicator (dot/circle) */
     & .checkmark:after {
         top: 9px;
@@ -177,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     display: inline-block;
 }
-  
+
 .btn {
     border: 2px solid gray;
     color: gray;
@@ -187,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
     font-weight: bold;
 }
-  
+
 .upload-btn-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;
@@ -198,7 +195,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .flex {
     display: flex;
-
     div {
         margin: 0 5px;
     }
@@ -214,5 +210,33 @@ h1, h2, h3, h4, h5, h6 {
 
 $darker: #e73600;
 .atc-modal {
-    color:white;
+    color: white;
+}
+
+ion-menu {
+    div[class*="toolbar-title-"],
+    * {
+        color: #{map-get($map: $textcolors, $key: secondary)};
+    }
+    div[class*="toolbar-background-"],
+    .fixed-content,
+    button {
+        background: #{map-get($map: $bgcolors, $key: element)} !important;
+    }
+    background: #{map-get($map: $bgcolors, $key: element)};
+    .nav-menu-list {
+        .item-inner {
+            border: none !important;
+        }
+    }
+    .header-md::after {
+        background: none;
+    }
+    .pp {
+        ion-icon {
+            font-size: 75px;
+        }
+        width: 75px;
+        height: 75px;
+    }
 }
