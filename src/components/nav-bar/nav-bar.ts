@@ -13,6 +13,7 @@ import { Component, Input } from '@angular/core';
 export class NavBarComponent {
 
   @Input() title : string;
+  @Input() color: string;
 
   constructor() {
     console.log('Hello NavBarComponent Component');

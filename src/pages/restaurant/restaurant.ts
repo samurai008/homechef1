@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the RestaurantPage page.
  *
@@ -14,6 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'restaurant.html',
 })
 export class RestaurantPage {
+
+  imgData = [
+    './assets/stock/dish1.jpeg',
+    './assets/stock/dish2.jpeg',
+    './assets/stock/dish3.png',
+    './assets/stock/dish4.jpeg',
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
