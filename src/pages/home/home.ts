@@ -8,6 +8,7 @@ import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart';
 })
 export class HomePage {
   title = "Home";
+  color = "dark";
 
   restaurants = [
     {

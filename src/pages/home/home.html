@@ -1,11 +1,11 @@
 <ion-header>
-  <nav-bar [title]="title"></nav-bar>
+    <nav-bar [title]="title"></nav-bar>
 </ion-header>
 
 <ion-content (click)="dismissModal()" padding>
-  <ion-grid>
-    <div *ngFor="let r of restaurants">
-    <button class="no-style mt-1" (click)="openRestaurant(r.id)">
+    <ion-grid>
+        <div *ngFor="let r of restaurants">
+            <button class="no-style mt-1" (click)="openRestaurant(r.id)">
       <ion-row class="customCard" align-items-center>
         <div class="discount-badge" *ngIf="r.discount">
             {{r.discount_percent}}%
@@ -29,7 +29,7 @@
         </ion-col>
       </ion-row>
     </button>
-    </div>
-  </ion-grid>
+        </div>
+    </ion-grid>
 
 </ion-content>

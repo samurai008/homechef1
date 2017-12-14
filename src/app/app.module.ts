@@ -14,6 +14,7 @@ import { RestaurantPage } from '../pages/restaurant/restaurant';
 
 import { NavBarComponent } from '../components/nav-bar/nav-bar';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
+import { ImageSliderComponent } from '../components/image-slider/image-slider';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RestaurantPage,
 
     NavBarComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    ImageSliderComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RestaurantPage,
 
     NavBarComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    ImageSliderComponent
   ],
   providers: [
     StatusBar,
