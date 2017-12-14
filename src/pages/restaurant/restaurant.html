@@ -6,13 +6,42 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>RestaurantPage</ion-title>
-    </ion-navbar>
+  <nav-bar [title]="title" [hamburger]="on" [back]="off" [showTitle]="on"></nav-bar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <image-slider [data]="imgData"></image-slider>
+  <image-slider [data]="imgData"></image-slider>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <h3>menu</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-between class="menu-list-item">
+      <ion-col col-4 align-self-baseline>
+        <span class="food-title">Lorem Ipsum</span>
+      </ion-col>
+      <ion-col col-4 align-self-baseline>
+        <button class="atc">add</button>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-between class="menu-list-item">
+      <ion-col col-4 align-self-baseline>
+        <span class="food-title">Lorem Ipsum</span>
+      </ion-col>
+      <ion-col col-4 align-self-baseline>
+        <button class="atc">add</button>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-between class="menu-list-item no-border">
+      <ion-col col-4 align-self-baseline>
+        <span class="food-title">Lorem Ipsum</span>
+      </ion-col>
+      <ion-col col-4 align-self-baseline>
+        <button class="atc">add</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

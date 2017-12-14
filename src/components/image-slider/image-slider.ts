@@ -14,6 +14,10 @@ import { Slides } from 'ionic-angular';
 })
 export class ImageSliderComponent {
   @Input() data : Array<string>;
+  @ViewChild(Slides) slides: Slides;
+  true: boolean = true;
+  spacevalue: number = 10;
+  perslideval: number = 2;
   Images = [
     './assets/stock/placeholder.png',
     './assets/stock/placeholder.png',

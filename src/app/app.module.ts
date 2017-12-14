@@ -11,6 +11,7 @@ import { RegisterPage } from '../pages/register/register';
 import { SelectPackagePage } from '../pages/select-package/select-package';
 import { CompleteProfilePage } from '../pages/complete-profile/complete-profile';
 import { RestaurantPage } from '../pages/restaurant/restaurant';
+import { CartPage } from '../pages/cart/cart';
 
 import { NavBarComponent } from '../components/nav-bar/nav-bar';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
@@ -29,6 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SelectPackagePage,
     CompleteProfilePage,
     RestaurantPage,
+    CartPage,
 
     NavBarComponent,
     AddToCartComponent,
@@ -49,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SelectPackagePage,
     CompleteProfilePage,
     RestaurantPage,
+    CartPage,
 
     NavBarComponent,
     AddToCartComponent,

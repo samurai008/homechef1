@@ -1,4 +1,7 @@
 nav-bar {
+    .start {
+        order: 1 !important;
+    }
     ion-navbar {
         * {
             color: #fff !important;

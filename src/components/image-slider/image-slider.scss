@@ -1,3 +1,8 @@
 image-slider {
-
+    ion-slides {
+        height: auto !important;
+    }
+    .swiper-pagination-bullet-active {
+        background: #{map-get($map: $bgcolors, $key: element)};
+    }
 }

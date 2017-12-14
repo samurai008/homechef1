@@ -1,5 +1,5 @@
 <ion-header>
-    <nav-bar [title]="title"></nav-bar>
+    <nav-bar [title]="title" [hamburger]="on" [location]="on" [showTitle]="off"></nav-bar>
 </ion-header>
 
 <ion-content (click)="dismissModal()" padding>
@@ -10,12 +10,12 @@
         <div class="discount-badge" *ngIf="r.discount">
             {{r.discount_percent}}%
         </div>
-        <ion-col col-sm-5 col-md-2>
+        <ion-col col-5>
           <div class="thumbnail">
               <img src="./assets/imgs/engBF.jpg">
           </div>
         </ion-col>
-        <ion-col>
+        <ion-col offset-1>
           <div>
             <h6>{{r.name}}</h6>
           </div>

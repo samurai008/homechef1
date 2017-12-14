@@ -15,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'restaurant.html',
 })
 export class RestaurantPage {
+  title: string = "Restaurant";
+  off: boolean = false;
+  on: boolean = true;
 
   imgData = [
     './assets/stock/dish1.jpeg',

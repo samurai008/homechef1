@@ -1,1 +1,27 @@
-page-restaurant {}
+page-restaurant {
+    h3 {
+        font-size: 16px;
+        text-transform: uppercase;
+        ion-icon {
+            color: #{map-get($map: $bgcolors, $key: dark)};
+        }
+    }
+    .food-title {
+        font-weight: 800;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .atc {
+        border: 1px solid white;
+        font-weight: bolder;
+        color: white;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        width: 100%;
+    }
+    .menu-list-item {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #{map-get($map: $textcolors, $key: light)};
+    }
+}

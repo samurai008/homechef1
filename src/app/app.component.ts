@@ -10,6 +10,7 @@ import { RegisterPage } from '../pages/register/register';
 import { SelectPackagePage } from '../pages/select-package/select-package';
 import { CompleteProfilePage } from '../pages/complete-profile/complete-profile';
 import { RestaurantPage } from '../pages/restaurant/restaurant';
+import { CartPage } from '../pages/cart/cart';
 
 @Component({
   templateUrl: 'app.html',

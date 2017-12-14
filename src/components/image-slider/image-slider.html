@@ -1,5 +1,5 @@
 <!-- Generated template for the ImageSliderComponent component -->
-<ion-slides>
+<ion-slides [spaceBetween]="spacevalue" [slidesPerView]="perslideval">
     <ion-slide *ngFor="let image of Images">
         <img src={{image}}>
     </ion-slide>
