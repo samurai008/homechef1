@@ -1,3 +1,35 @@
 page-cart {
-
+    h4.title,
+    h6 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .cart-table {
+        margin-top: 5%;
+        .title-row {
+            border-bottom: 1px solid #{map-get($bgcolors, light)};
+            h6 {
+                font-size: 12px;
+            }
+        }
+        .col-item {
+            * {
+                text-align: left;
+            }
+        }
+        .table-content {
+            padding: 10px 0;
+            h6 {
+                font-size: 14px;
+            }
+            border-bottom: 1px solid #{map-get($bgcolors, light)};
+        }
+    }
+    .remove {
+        border: 2px solid #{map-get($textcolors, time)};
+        padding: 5px 10px;
+        text-transform: uppercase;
+        background: none;
+        font-size: 10px;
+    }
 }
