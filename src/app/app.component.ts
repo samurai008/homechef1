@@ -11,6 +11,8 @@ import { SelectPackagePage } from '../pages/select-package/select-package';
 import { CompleteProfilePage } from '../pages/complete-profile/complete-profile';
 import { RestaurantPage } from '../pages/restaurant/restaurant';
 import { CartPage } from '../pages/cart/cart';
+import { OrderListPage } from '../pages/order-list/order-list';
+import { OrderDetailPage } from '../pages/order-detail/order-detail';
 
 @Component({
   templateUrl: 'app.html',
@@ -18,7 +20,7 @@ import { CartPage } from '../pages/cart/cart';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CartPage;
+  rootPage: any = OrderListPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -28,11 +30,12 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
       { title: 'Enter Page', component: EnterPage },
       { title: 'Register Page', component: RegisterPage },
       { title: 'Complete Profile', component: CompleteProfilePage },
       { title: 'Restaurant Page', component: RestaurantPage },
+      { title: 'OrderList Page', component: OrderListPage },
+      { title: 'OrderDetail Page', component: OrderDetailPage },
     ];
 
   }

@@ -49,6 +49,9 @@ export class CartPage {
     }
   }
 
+  popView() {
+    this.navCtrl.pop();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }

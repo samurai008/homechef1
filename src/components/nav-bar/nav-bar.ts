@@ -22,12 +22,15 @@ export class NavBarComponent {
 
   constructor(private appCtrl: App) {
     console.log('Hello NavBarComponent Component');
-    console.log(this.title);
   }
 
   goToCart() {
     console.log('go to cart');
     this.appCtrl.getRootNav().push(CartPage);
+  }
+
+  popView() {
+    this.appCtrl.goBack().then(res => console.log(res));
   }
 
 }
