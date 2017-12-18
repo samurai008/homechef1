@@ -3,6 +3,14 @@ page-order-detail {
         ion-col:not(:first-child) {
             text-align: right;
         }
+        ion-col {
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+    }
+    .border-btm {
+        border-bottom: 1px solid #{map-get($map: $bgcolors, $key: light)};
+        margin-bottom: 5px;
     }
     .content-title {
         text-transform: uppercase;

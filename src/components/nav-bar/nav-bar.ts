@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { App } from 'ionic-angular';
+import { App, ModalController } from 'ionic-angular';
 import { CartPage } from '../../pages/cart/cart';
+import { LocationComponent } from '../location/location';
 /**
  * Generated class for the NavBarComponent component.
  *
@@ -20,7 +21,7 @@ export class NavBarComponent {
   @Input() location: boolean;
   @Input() showTitle: boolean;
 
-  constructor(private appCtrl: App) {
+  constructor(private appCtrl: App, private modalCtrl: ModalController) {
     console.log('Hello NavBarComponent Component');
   }
 
@@ -31,6 +32,12 @@ export class NavBarComponent {
 
   popView() {
     this.appCtrl.goBack().then(res => console.log(res));
+  }
+
+  selectLocation() {
+    console.log('selectLocation triggered');
+    let locationModal = this.modalCtrl.create(LocationComponent);
+    locationModal.present();
   }
 
 }

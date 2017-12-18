@@ -17,15 +17,26 @@
         <h4 class="content-title">invoice</h4>
       </ion-col>
     </ion-row>
-    <ion-row justify-content-around class="invoice-row">
+    <ion-row class="invoice-row border-btm" justify-content-around>
       <ion-col col-4>
-        Item Name
+        item
       </ion-col>
-      <ion-col col-1>
-        99
+      <ion-col col-2>
+        QTY
       </ion-col>
       <ion-col col-3>
-        40000
+        price
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-around class="invoice-row" *ngFor="let item of orderDetails">
+      <ion-col col-4>
+        {{item.item}}
+      </ion-col>
+      <ion-col col-1>
+        {{item.qty}}
+      </ion-col>
+      <ion-col col-3>
+        {{item.price}}
       </ion-col>
     </ion-row>
   </ion-grid>

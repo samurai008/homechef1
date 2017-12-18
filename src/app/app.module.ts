@@ -19,6 +19,7 @@ import { OrderDetailPage } from '../pages/order-detail/order-detail';
 import { NavBarComponent } from '../components/nav-bar/nav-bar';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
 import { ImageSliderComponent } from '../components/image-slider/image-slider';
+import { LocationComponent } from '../components/location/location';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -39,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
     NavBarComponent,
     AddToCartComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
     NavBarComponent,
     AddToCartComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    LocationComponent
   ],
   providers: [
     StatusBar,

@@ -32,4 +32,12 @@ nav-bar {
         right: -3.5px;
         background: #{map-get($map: $textcolors, $key: blu)};
     }
+
+    .select-location-btn {
+        padding: 10px 15px;
+        border: 1px solid #{map-get($map: $bgcolors, $key: light)};
+        background: none;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
 }

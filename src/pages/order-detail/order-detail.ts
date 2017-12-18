@@ -15,11 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OrderDetailPage {
   title: string = "Order Detail";
+  orderDetails: any[];
+  totalPrice: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     let data = navParams.data;
-    console.log(data);
     this.title = 'Order ' + data.orderno;
+    this.orderDetails = data.orderdetails
+                        .map((e) => {
+                          e['price'] = e['qty']*e['price']
+                          return e;
+                        });
+    console.log(this.orderDetails);
   }
 
   ionViewDidLoad() {

@@ -20,7 +20,7 @@ import { OrderDetailPage } from '../pages/order-detail/order-detail';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = OrderListPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
