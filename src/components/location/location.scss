@@ -1,5 +1,18 @@
 location {
     background: url('../assets/imgs/bgOne.jpg');
     background-size: cover;
-    
+    position: relative;
+    .input {
+        ion-icon {
+            font-size: 25px;
+        }
+        input {
+            width: 80%;
+        }
+    }
+    .location-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -1,5 +1,17 @@
 <!-- Generated template for the LocationComponent component -->
-<div>
-  {{text}}
-  <button (click)="dismiss()">Close Modal</button>
-</div>
+<ion-grid class="full-w full-h location-grid">
+    <ion-row class="full-w">
+        <ion-col col-12 col-md-6>
+            <form>
+                <div class="input">
+                    <ion-icon name="pin"></ion-icon>
+                    <input type="text" name="location" id="location" placeholder="ENTER YOUR LOCATION" />
+                </div>
+                <button (click)="dismiss()">Close Modal</button>
+            </form>
+        </ion-col>
+    </ion-row>
+    <div class="close-btn">
+        <button><ion-icon name="close"></ion-icon></button>
+    </div>
+</ion-grid>
