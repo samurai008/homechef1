@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController, ViewController } from 'ionic-angular';
+import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart';
+import { UserStorageProvider } from '../../providers/user-storage/user-storage';
 
 @Component({
   selector: 'page-home',
@@ -11,6 +12,8 @@ export class HomePage {
   color = "dark";
   on: boolean = true;
   off: boolean = false;
+
+  userData: any;
 
   restaurants = [
     {
@@ -41,8 +44,16 @@ export class HomePage {
   addToCartModal;
 
   constructor(public navCtrl: NavController,
-  public modalCtrl: ModalController) {
+  public modalCtrl: ModalController,
+  private navParams: NavParams,
+  private userStorage: UserStorageProvider) {
+    this.userData = this.navParams.data;
+  }
 
+  ngOnInit() {
+    this.userStorage.remove().catch((res) => {
+      console.log(res);
+    })
   }
 
   openRestaurant(id) {

@@ -1,4 +1,9 @@
 page-register {
+    .background {
+        background: url('../assets/imgs/bgRegister.jpg');
+        background-size: contain;
+    }
+
     .h-or {
         margin: 2.5% auto;
         background: #{map-get($map: $bgcolors, $key: primary)};

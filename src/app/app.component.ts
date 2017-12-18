@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -14,6 +15,8 @@ import { CartPage } from '../pages/cart/cart';
 import { OrderListPage } from '../pages/order-list/order-list';
 import { OrderDetailPage } from '../pages/order-detail/order-detail';
 
+import { UserStorageProvider } from '../providers/user-storage/user-storage';
+
 @Component({
   templateUrl: 'app.html',
 })
@@ -24,7 +27,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    private storage: Storage, private userStorage: UserStorageProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -38,6 +42,16 @@ export class MyApp {
       { title: 'OrderDetail Page', component: OrderDetailPage },
     ];
 
+    //this.userStorage.set({token: 1234, userData: {name: "Nilabjo"}});
+    this.userStorage.get().then(res => this.checkUser(res));
+  }
+
+  checkUser(res) {
+    if (res !== null) {
+      this.nav.setRoot(HomePage, res);
+    } else {
+      this.nav.setRoot(RegisterPage);
+    }
   }
 
   initializeApp() {
