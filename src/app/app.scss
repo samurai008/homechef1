@@ -256,3 +256,24 @@ ion-menu {
 .text-center {
     text-align: center;
 }
+
+.close-btn {
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    button {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        background: $darker;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ion-icon {
+            font-size: 50px;
+            color: white;
+            font-weight: bolder;
+        }
+    }
+}
