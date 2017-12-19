@@ -14,6 +14,8 @@ import { RestaurantPage } from '../pages/restaurant/restaurant';
 import { CartPage } from '../pages/cart/cart';
 import { OrderListPage } from '../pages/order-list/order-list';
 import { OrderDetailPage } from '../pages/order-detail/order-detail';
+import { PaymentPage } from '../pages/payment/payment';
+import { BlankPage } from '../pages/blank/blank';
 
 import { UserStorageProvider } from '../providers/user-storage/user-storage';
 
@@ -23,7 +25,7 @@ import { UserStorageProvider } from '../providers/user-storage/user-storage';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = BlankPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -39,7 +41,6 @@ export class MyApp {
       { title: 'Complete Profile', component: CompleteProfilePage },
       { title: 'Restaurant Page', component: RestaurantPage },
       { title: 'OrderList Page', component: OrderListPage },
-      { title: 'OrderDetail Page', component: OrderDetailPage },
     ];
 
     //this.userStorage.set({token: 1234, userData: {name: "Nilabjo"}});
@@ -47,6 +48,7 @@ export class MyApp {
   }
 
   checkUser(res) {
+    //console.log('uncomment for check')
     if (res !== null) {
       this.nav.setRoot(HomePage, res);
     } else {

@@ -263,15 +263,15 @@ ion-menu {
     top: 0;
     right: 0;
     button {
-        width: 75px;
-        height: 75px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         background: $darker;
         display: flex;
         align-items: center;
         justify-content: center;
         ion-icon {
-            font-size: 50px;
+            font-size: 25px;
             color: white;
             font-weight: bolder;
         }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Http} from '@angular/http';
+import { PaymentPage } from '../payment/payment';
 /**
  * Generated class for the CartPage page.
  *
@@ -51,6 +52,10 @@ export class CartPage {
 
   popView() {
     this.navCtrl.pop();
+  }
+
+  goToPayment() {
+    this.navCtrl.push(PaymentPage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
