@@ -1,0 +1,14 @@
+page-payment {
+    .cust-list-header {
+        border-top: none !important;
+        border-bottom: 1px solid #{map-get($bgcolors, light)};
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .btn-dark {
+        ion-icon {
+            margin-left: 10px;
+            font-weight: bolder;
+        }
+    }
+}

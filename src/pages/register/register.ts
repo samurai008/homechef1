@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, Validators } from '@angular/forms';
+import { HomePage } from '../../pages/home/home';
 
 /**
  * Generated class for the RegisterPage page.
@@ -14,8 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'register.html',
 })
 export class RegisterPage {
+  public loginForm = this.fb.group({
+    username: ["", Validators.required],
+    password: ["", Validators.required]
+  });
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  private fb: FormBuilder) {
+  }
+
+  doLogin(event) {
+     console.log(event);
+     console.log(this.loginForm.value);
+     this.navCtrl.setRoot(HomePage);
   }
 
   ionViewDidLoad() {

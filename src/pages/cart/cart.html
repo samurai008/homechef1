@@ -38,6 +38,11 @@
                 <h6>{{item.price}}</h6>
             </ion-col>
         </ion-row>
+        <ion-row>
+            <ion-col>
+                <button class="btn-dark full-w" (click)="goToPayment()">proceed to payment</button>
+            </ion-col>
+        </ion-row>
     </ion-grid>
 
     <ion-grid *ngIf="displayEmptyCartMessage">

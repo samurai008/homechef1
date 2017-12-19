@@ -16,16 +16,21 @@ import { RestaurantPage } from '../pages/restaurant/restaurant';
 import { CartPage } from '../pages/cart/cart';
 import { OrderListPage } from '../pages/order-list/order-list';
 import { OrderDetailPage } from '../pages/order-detail/order-detail';
+import { PaymentPage } from '../pages/payment/payment';
+import { BlankPage } from '../pages/blank/blank';
 
 import { NavBarComponent } from '../components/nav-bar/nav-bar';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
 import { ImageSliderComponent } from '../components/image-slider/image-slider';
 import { LocationComponent } from '../components/location/location';
+import { PaymentMethodComponent } from '../components/payment-method/payment-method';
+import { AddressBookComponent } from '../components/address-book/address-book';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserStorageProvider } from '../providers/user-storage/user-storage';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,11 +45,15 @@ import { HttpClientModule } from '@angular/common/http';
     CartPage,
     OrderListPage,
     OrderDetailPage,
+    PaymentPage,
+    BlankPage,
 
     NavBarComponent,
     AddToCartComponent,
     ImageSliderComponent,
-    LocationComponent
+    LocationComponent,
+    PaymentMethodComponent,
+    AddressBookComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -67,6 +77,8 @@ import { HttpClientModule } from '@angular/common/http';
     CartPage,
     OrderListPage,
     OrderDetailPage,
+    PaymentPage,
+    BlankPage,
 
     NavBarComponent,
     AddToCartComponent,
