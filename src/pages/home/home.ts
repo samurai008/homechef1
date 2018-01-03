@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart';
 import { UserStorageProvider } from '../../providers/user-storage/user-storage';
+import { AllCategoriesProvider } from '../../providers/all-categories/all-categories';
 
 @Component({
   selector: 'page-home',
@@ -14,6 +15,7 @@ export class HomePage {
   off: boolean = false;
 
   userData: any;
+  menu: any;
 
   restaurants = [
     {
@@ -46,7 +48,22 @@ export class HomePage {
   constructor(public navCtrl: NavController,
   public modalCtrl: ModalController,
   private navParams: NavParams,
+  private categories: AllCategoriesProvider,
   private user: UserStorageProvider) {
+
+    this.categories.getCategories().subscribe(
+      (res) => this.menu = res,
+      (err) => console.log(err),
+      () => {
+        this.restaurants.map(
+          (val, i) => {
+            console.log(val, i);
+            val['name'] = this.menu[i]['fields']['name'];
+          }
+        )
+      }
+    );
+
     this.user.get()
     .then((res) => {
       console.log(res);
@@ -67,7 +84,6 @@ export class HomePage {
     }
     this.addToCartModal = this.modalCtrl.create(AddToCartComponent, {}, opts);
     this.addToCartModal.present();
-    console.log(this.addToCartModal);
   }
 
   dismissModal() {
