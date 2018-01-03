@@ -32,7 +32,7 @@ export class ProfilePage {
   }
 
   setProfileData(res) {
-    console.log(res)
+    this.profileData = res;
   }
 
   ionViewDidLoad() {
