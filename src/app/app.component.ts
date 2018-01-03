@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
@@ -18,6 +18,7 @@ import { PaymentPage } from '../pages/payment/payment';
 import { BlankPage } from '../pages/blank/blank';
 
 import { UserStorageProvider } from '../providers/user-storage/user-storage';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html',
@@ -25,41 +26,26 @@ import { UserStorageProvider } from '../providers/user-storage/user-storage';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = BlankPage;
+  rootPage: any = EnterPage;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
-    private storage: Storage, private userStorage: UserStorageProvider) {
+    private storage: Storage, private userStorage: UserStorageProvider,
+    private menuCtrl: MenuController) {
     this.initializeApp();
+
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Enter Page', component: EnterPage },
-      { title: 'Register Page', component: RegisterPage },
-      { title: 'Complete Profile', component: CompleteProfilePage },
-      { title: 'Restaurant Page', component: RestaurantPage },
-      { title: 'OrderList Page', component: OrderListPage },
+      { title: 'Menu', component: HomePage },
+      { title: 'Orders', component: OrderListPage },
     ];
 
-    //this.userStorage.set({token: 1234, userData: {name: "Nilabjo"}});
-    this.userStorage.get().then(res => this.checkUser(res));
-  }
-
-  checkUser(res) {
-    //console.log('uncomment for check')
-    if (res !== null) {
-      this.nav.setRoot(HomePage, res);
-    } else {
-      this.nav.setRoot(RegisterPage);
-    }
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -69,5 +55,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  goToProfile() {
+    this.menuCtrl.close();
+    this.nav.setRoot(ProfilePage);
   }
 }

@@ -21,11 +21,11 @@ export class UserStorageProvider {
     return this.storage.get(this.storageName).then((res) => {
       return res;
     })
-    .catch(err => console.log(err));
+    .catch(err => err);
   }
 
   set(value) {
-    return this.storage.set(this.storageName, value).then(res => console.log(res))
+    return this.storage.set(this.storageName, value).then(res => res)
       .catch(err => err);
   }
 

@@ -1,0 +1,16 @@
+page-profile {
+    .scroll-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+
+    ion-icon {
+        margin-right: 10px;
+    }
+}

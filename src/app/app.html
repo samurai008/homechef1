@@ -1,7 +1,7 @@
 <ion-menu [content]="content">
     <ion-header>
         <ion-toolbar>
-            <ion-title>
+            <ion-title (click)="goToProfile()">
                 <ion-grid>
                     <ion-row align-items-center>
                         <ion-col col-3>
@@ -10,7 +10,14 @@
                             </div>
                         </ion-col>
                         <ion-col offset-2>
-                            <span class="u-name">John Doe</span>
+                            <span class="u-name">
+                                <div>
+                                    John Doe
+                                </div>
+                                <div>
+                                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                                </div>
+                            </span>
                         </ion-col>
                     </ion-row>
                 </ion-grid>

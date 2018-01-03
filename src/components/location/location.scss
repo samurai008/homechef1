@@ -1,6 +1,6 @@
 location {
-    background: url('../assets/imgs/bgOne.jpg');
-    background-size: contain;
+    background: url('../assets/imgs/bgOne.jpg') no-repeat;
+    background-size: cover;
     position: relative;
     .input {
         ion-icon {
@@ -14,5 +14,13 @@ location {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    button[type="submit"] {
+        margin-top: 10px;
+        position: relative;
+        ion-icon {
+            position: absolute;
+            right: 10px;
+        }
     }
 }

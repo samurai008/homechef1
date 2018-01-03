@@ -18,6 +18,7 @@ import { OrderListPage } from '../pages/order-list/order-list';
 import { OrderDetailPage } from '../pages/order-detail/order-detail';
 import { PaymentPage } from '../pages/payment/payment';
 import { BlankPage } from '../pages/blank/blank';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { NavBarComponent } from '../components/nav-bar/nav-bar';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
@@ -31,6 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserStorageProvider } from '../providers/user-storage/user-storage';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CartStorageProvider } from '../providers/cart-storage/cart-storage';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     OrderDetailPage,
     PaymentPage,
     BlankPage,
-
+    ProfilePage,
     NavBarComponent,
     AddToCartComponent,
     ImageSliderComponent,
@@ -79,6 +82,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     OrderDetailPage,
     PaymentPage,
     BlankPage,
+    ProfilePage,
 
     NavBarComponent,
     AddToCartComponent,
@@ -89,7 +93,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserStorageProvider
+    UserStorageProvider,
+    CartStorageProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}

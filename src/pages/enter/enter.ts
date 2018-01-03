@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the EnterPage page.
@@ -20,6 +21,14 @@ export class EnterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EnterPage');
+  }
+
+  goToRegister() {
+    this.navCtrl.push(RegisterPage);
+  }
+
+  goToLogin() {
+    this.navCtrl.push(RegisterPage);
   }
 
 }

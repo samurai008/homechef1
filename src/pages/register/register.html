@@ -12,13 +12,15 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <ion-grid>
             <ion-row>
                 <ion-col>
                     <div class="input">
                         <ion-icon name="person"></ion-icon>
-                        <input type="text" formControlName="username" id="username" placeholder="USERNAME" />
+                        <input type="text" 
+                               formControlName="username"
+                               placeholder="USERNAME" />
                     </div>
                 </ion-col>
             </ion-row>
@@ -26,12 +28,19 @@
                 <ion-col>
                     <div class="input">
                         <ion-icon name="lock"></ion-icon>
-                        <input type="password" formControlName="password" id="password" placeholder="*******" />
+                        <input type="password"
+                               formControlName="password"
+                               placeholder="*******" />
                     </div>
                 </ion-col>
             </ion-row>
             <ion-row>
-                <ion-col><button type="submit" class="btn-dark w-100">log in</button></ion-col>
+                <ion-col>
+                    <button type="submit" 
+                                 class="btn-dark w-100">
+                        log in
+                    </button>
+                </ion-col>
             </ion-row>
         </ion-grid>
     </form>

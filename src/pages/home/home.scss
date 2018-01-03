@@ -1,13 +1,15 @@
 page-home {
+    .fixed-content {background: #{map-get($map: $bgcolors, $key: light)} !important;} 
     ion-grid {
         margin: 1%;
     }
     .customCard {
+        background: #fff;
         position: relative;
         border: 1px solid #{map-get($map: $textcolors, $key: light)};
         box-shadow: 1px 1px 5px #cccbc6;
         border-radius: 5px;
-        margin: 15px 0;
+        margin: 5px 0 !important;
         .discount-badge {
             background: #{map-get($map: $textcolors, $key: blu)};
             width: 50px;
@@ -21,8 +23,12 @@ page-home {
             position: absolute;
             right: 10px;
             top: -25px;
+            box-shadow: 0px 0px 5px #000000;
         }
         ion-col {
+            * h6 {
+                text-align: left;
+            }
             text-align: left;
             .thumbnail {
                 width: 100%;

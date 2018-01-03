@@ -46,14 +46,19 @@ export class HomePage {
   constructor(public navCtrl: NavController,
   public modalCtrl: ModalController,
   private navParams: NavParams,
-  private userStorage: UserStorageProvider) {
-    this.userData = this.navParams.data;
+  private user: UserStorageProvider) {
+    this.user.get()
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(`** UserStorageProvider **`)
+      console.error(err);
+    })
   }
 
   ngOnInit() {
-    this.userStorage.remove().catch((res) => {
-      console.log(res);
-    })
+    
   }
 
   openRestaurant(id) {
