@@ -28,26 +28,40 @@ export class RegisterPage implements OnInit {
     private user: UserStorageProvider,
     private auth: AuthProvider
   ) {
-    let loading = this.loadingCtrl.create({
-      spinner: 'hide',
-      content: `
-        <div class="spinner-container">
-          <div class="loader"></div>
-          <h6>initializing</h6>
-        </div>
-      ` 
-    });
+    let loading = this.loadingPopUp('initializing')
     loading.present();
     this.user.get().then((res) => {
       if (res !== null) {
         loading.dismiss();
-        // this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(HomePage);
       } else {
         loading.dismiss();
       }
     }).catch((err) => {
       console.log(err);
     })
+  }
+
+  loadingPopUp(message) {
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: `
+        <div class="spinner-container">
+          <div class="loader"></div>
+          <h6>${message}</h6>
+        </div>
+      ` 
+    });
+    return loading;
+  }
+
+  createToast(message) {
+      let toast = this.toastCtrl.create({
+        message: `${message}`,
+        duration: 3000,
+        showCloseButton: true,
+      });
+      return toast;
   }
 
   ngOnInit() {
@@ -59,26 +73,41 @@ export class RegisterPage implements OnInit {
 
   onSubmit() {
     if (!this.loginForm.valid) {
-      let toast = this.toastCtrl.create({
-        message: 'Invalid data! Please try again',
-        duration: 3000,
-        showCloseButton: true,
-      });
+      let toast = this.createToast('Invalid inputs. Please try again');
       toast.present();
       return false;
     }
-    let userData = this.loginForm.controls.username.value;
-    this.user.set(userData).then((res) => {
-      console.log(res);
-      this.doLogin(this.loginForm.controls.username.value,
+    this.doLogin(this.loginForm.controls.username.value,
       this.loginForm.controls.password.value);
-      // this.navCtrl.setRoot(HomePage);
-    })
   }
 
   doLogin(username, password) {
-    let status = this.auth.login(username, password);
-    console.log(status);
+    let loading = this.loadingPopUp('Loggin in');
+    loading.present();
+    let response;
+    let status = this.auth.login(username, password)
+                  .subscribe((res) => {
+                    response = res
+                  },
+                (err) => console.log(err),
+                () => {
+                    if (response['status'] == "true") {
+                      console.log('aaaaaa');
+                      this.saveUser(username);
+                      loading.dismiss();
+                    } else {
+                      this.createToast('Invalid creds. Please try again!');
+                    }
+                }
+              )
+  }
+
+  saveUser(data) {
+    this.user.set(data).then((res) => {
+      console.log(res);
+      // console.log(`nada`);
+      this.navCtrl.setRoot(HomePage);
+    })
   }
 
   ionViewDidLoad() {

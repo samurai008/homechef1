@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CartStorageProvider } from '../providers/cart-storage/cart-storage';
 import { AuthProvider } from '../providers/auth/auth';
+import { AllCategoriesProvider } from '../providers/all-categories/all-categories';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { AuthProvider } from '../providers/auth/auth';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserStorageProvider,
     CartStorageProvider,
-    AuthProvider
+    AuthProvider,
+    AllCategoriesProvider
   ]
 })
 export class AppModule {}

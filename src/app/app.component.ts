@@ -40,6 +40,7 @@ export class MyApp {
     this.pages = [
       { title: 'Menu', component: HomePage },
       { title: 'Orders', component: OrderListPage },
+      { title: 'Complete Profile', component:  CompleteProfilePage }
     ];
 
   }
