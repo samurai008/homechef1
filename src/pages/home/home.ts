@@ -14,36 +14,8 @@ export class HomePage {
   color = "dark";
   on: boolean = true;
   off: boolean = false;
-
   userData: any;
   menu: any;
-
-  // restaurants = [
-  //   {
-  //     id: 1,
-  //     name: 'Punjabi Rasoi',
-  //     description: 'Small description about the restaurant.',
-  //     thumbnail: './assets/imgs/engBF.jpg',
-  //     discount: true,
-  //     discount_percent: 12,
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Freshmenu',
-  //     description: 'Small description about the restaurant.',
-  //     thumbnail: './assets/imgs/engBF.jpg',
-  //     discount: false,
-  //     discount_percent: undefined,
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Box8',
-  //     description: 'Small description about the restaurant.',
-  //     thumbnail: './assets/imgs/engBF.jpg',
-  //     discount: true,
-  //     discount_percent: 50,
-  //   }
-  // ];
   restaurants = [];
   addToCartModal;
 
