@@ -3,6 +3,7 @@ import { NavController, ModalController, ViewController, NavParams } from 'ionic
 import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart';
 import { UserStorageProvider } from '../../providers/user-storage/user-storage';
 import { AllCategoriesProvider } from '../../providers/all-categories/all-categories';
+import { menu } from '../../interfaces/menu-obj';
 
 @Component({
   selector: 'page-home',
@@ -17,32 +18,33 @@ export class HomePage {
   userData: any;
   menu: any;
 
-  restaurants = [
-    {
-      id: 1,
-      name: 'Punjabi Rasoi',
-      description: 'Small description about the restaurant.',
-      thumbnail: './assets/imgs/engBF.jpg',
-      discount: true,
-      discount_percent: 12,
-    },
-    {
-      id: 2,
-      name: 'Freshmenu',
-      description: 'Small description about the restaurant.',
-      thumbnail: './assets/imgs/engBF.jpg',
-      discount: false,
-      discount_percent: undefined,
-    },
-    {
-      id: 3,
-      name: 'Box8',
-      description: 'Small description about the restaurant.',
-      thumbnail: './assets/imgs/engBF.jpg',
-      discount: true,
-      discount_percent: 50,
-    }
-  ];
+  // restaurants = [
+  //   {
+  //     id: 1,
+  //     name: 'Punjabi Rasoi',
+  //     description: 'Small description about the restaurant.',
+  //     thumbnail: './assets/imgs/engBF.jpg',
+  //     discount: true,
+  //     discount_percent: 12,
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Freshmenu',
+  //     description: 'Small description about the restaurant.',
+  //     thumbnail: './assets/imgs/engBF.jpg',
+  //     discount: false,
+  //     discount_percent: undefined,
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Box8',
+  //     description: 'Small description about the restaurant.',
+  //     thumbnail: './assets/imgs/engBF.jpg',
+  //     discount: true,
+  //     discount_percent: 50,
+  //   }
+  // ];
+  restaurants = [];
   addToCartModal;
 
   constructor(public navCtrl: NavController,
@@ -55,12 +57,21 @@ export class HomePage {
       (res) => this.menu = res,
       (err) => console.log(err),
       () => {
-        this.restaurants.map(
-          (val, i) => {
-            console.log(val, i);
-            val['name'] = this.menu[i]['fields']['name'];
-          }
-        )
+        console.log(this.menu.length);
+
+        for (let i=0; i < this.menu.length; i++) {
+          let m = new menu();
+          m.id = this.menu[i]['pk'];
+          m.name = this.menu[i]['fields']['name'];
+          this.restaurants.push(m)
+        }
+        // this.restaurants.map(
+        //   (val, i) => {
+        //     console.log(val, i);
+        //     val['name'] = this.menu[i]['fields']['name'];
+        //     val['id'] = this.menu[i]['pk'];
+        //   }
+        // )
       }
     );
 

@@ -11,6 +11,7 @@ import { AddressBookComponent } from './address-book/address-book';
     ImageSliderComponent,
     LocationComponent,
     PaymentMethodComponent,
+    AddressBookComponent,
     AddressBookComponent],
 	imports: [],
 	exports: [NavBarComponent,
@@ -18,6 +19,7 @@ import { AddressBookComponent } from './address-book/address-book';
     ImageSliderComponent,
     LocationComponent,
     PaymentMethodComponent,
+    AddressBookComponent,
     AddressBookComponent]
 })
 export class ComponentsModule {}
