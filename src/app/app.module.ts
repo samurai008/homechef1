@@ -35,6 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CartStorageProvider } from '../providers/cart-storage/cart-storage';
 import { AuthProvider } from '../providers/auth/auth';
 import { AllCategoriesProvider } from '../providers/all-categories/all-categories';
+import { ProductListProvider } from '../providers/product-list/product-list';
+import { ProductDetailProvider } from '../providers/product-detail/product-detail';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,9 @@ import { AllCategoriesProvider } from '../providers/all-categories/all-categorie
     UserStorageProvider,
     CartStorageProvider,
     AuthProvider,
-    AllCategoriesProvider
+    AllCategoriesProvider,
+    ProductListProvider,
+    ProductDetailProvider
   ]
 })
 export class AppModule {}

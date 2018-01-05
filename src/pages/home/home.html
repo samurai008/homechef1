@@ -1,35 +1,39 @@
 <ion-header>
-    <nav-bar [title]="title" [hamburger]="on" [location]="on" [showTitle]="off"></nav-bar>
+  <nav-bar [title]="title" [hamburger]="on" [location]="on" [showTitle]="off"></nav-bar>
 </ion-header>
 
 <ion-content (click)="dismissModal()" padding>
-    <ion-grid>
-        <div *ngFor="let r of restaurants">
-            <button class="no-style mt-1" (click)="openRestaurant(r.id)">
-      <ion-row class="customCard" align-items-center>
-        <div class="discount-badge" *ngIf="r.discount">
+  <ion-grid>
+    <div *ngFor="let r of restaurants">
+      <button class="no-style mt-1" (click)="openRestaurant(r.id)">
+        <ion-row class="customCard" align-items-center>
+          <div class="discount-badge" *ngIf="r.discount">
             {{r.discount_percent}}%
-        </div>
-        <ion-col col-5>
-          <div class="thumbnail">
-              <img src="./assets/imgs/engBF.jpg">
           </div>
-        </ion-col>
-        <ion-col offset-1>
-          <div>
-            <h6>{{r.name}}</h6>
-          </div>
-          <div class="price">
-            <h6><small>Starts from <span>Rs. 999</span></small></h6>
-          </div>
-          <div class="pin">
-            <ion-icon name="pin"></ion-icon>
-            Connaught Place
-          </div>
-        </ion-col>
-      </ion-row>
-    </button>
-        </div>
-    </ion-grid>
+          <ion-col col-5>
+            <div class="thumbnail">
+              <img src={{r.thumbnail}}>
+            </div>
+          </ion-col>
+          <ion-col offset-md-1>
+            <div>
+              <h6>{{r.name}}</h6>
+            </div>
+            <div class="price">
+              <h6>
+                <small>Starts from
+                  <span>Rs. 999</span>
+                </small>
+              </h6>
+            </div>
+            <div class="pin">
+              <ion-icon name="pin"></ion-icon>
+              Connaught Place
+            </div>
+          </ion-col>
+        </ion-row>
+      </button>
+    </div>
+  </ion-grid>
 
 </ion-content>

@@ -27,6 +27,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = EnterPage;
+  username: string = 'John Doe';
 
   pages: Array<{title: string, component: any}>;
 
@@ -35,6 +36,8 @@ export class MyApp {
     private menuCtrl: MenuController) {
     this.initializeApp();
 
+    this.userStorage.get().then(res => this.username = res)
+    .catch(err => console.log(err));
 
     // used for an example of ngFor and navigation
     this.pages = [

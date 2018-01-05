@@ -27,11 +27,10 @@ export class ProfilePage {
     // this.userStorage.set({token: 1234, userData: {name: "Nilabjo", picture: null}}); 
     this.userStorage.get().then(res => this.setProfileData(res))
     .catch(err => console.log(err));
-  
-  
   }
 
   setProfileData(res) {
+    console.log(res)
     this.profileData = res;
   }
 

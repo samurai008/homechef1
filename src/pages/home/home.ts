@@ -4,6 +4,7 @@ import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart';
 import { UserStorageProvider } from '../../providers/user-storage/user-storage';
 import { AllCategoriesProvider } from '../../providers/all-categories/all-categories';
 import { menu } from '../../interfaces/menu-obj';
+import { RestaurantPage } from '../../pages/restaurant/restaurant';
 
 @Component({
   selector: 'page-home',
@@ -29,21 +30,12 @@ export class HomePage {
       (res) => this.menu = res,
       (err) => console.log(err),
       () => {
-        console.log(this.menu.length);
-
         for (let i=0; i < this.menu.length; i++) {
           let m = new menu();
           m.id = this.menu[i]['pk'];
           m.name = this.menu[i]['fields']['name'];
           this.restaurants.push(m)
         }
-        // this.restaurants.map(
-        //   (val, i) => {
-        //     console.log(val, i);
-        //     val['name'] = this.menu[i]['fields']['name'];
-        //     val['id'] = this.menu[i]['pk'];
-        //   }
-        // )
       }
     );
 
@@ -62,11 +54,11 @@ export class HomePage {
   }
 
   openRestaurant(id) {
-    const opts = {
-      cssClass: "atc-modal"
-    }
-    this.addToCartModal = this.modalCtrl.create(AddToCartComponent, {}, opts);
-    this.addToCartModal.present();
+    
+
+    this.navCtrl.push(RestaurantPage, {
+      id: id
+    });
   }
 
   dismissModal() {

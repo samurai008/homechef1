@@ -19,29 +19,15 @@
         <h3>menu</h3>
       </ion-col>
     </ion-row>
-    <ion-row justify-content-between class="menu-list-item">
-      <ion-col col-4 align-self-baseline>
-        <span class="food-title">Lorem Ipsum</span>
-      </ion-col>
-      <ion-col col-4 align-self-baseline>
-        <button class="atc">add</button>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-between class="menu-list-item">
-      <ion-col col-4 align-self-baseline>
-        <span class="food-title">Lorem Ipsum</span>
-      </ion-col>
-      <ion-col col-4 align-self-baseline>
-        <button class="atc">add</button>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-between class="menu-list-item no-border">
-      <ion-col col-4 align-self-baseline>
-        <span class="food-title">Lorem Ipsum</span>
-      </ion-col>
-      <ion-col col-4 align-self-baseline>
-        <button class="atc">add</button>
-      </ion-col>
-    </ion-row>
+    <div *ngFor="let product of productList">
+      <ion-row justify-content-between class="menu-list-item" (click)="openProductDetails(product.pk)">
+        <ion-col col-sm-4 align-self-baseline>
+          <span class="food-title">{{product.fields.name}}</span>
+        </ion-col>
+        <ion-col col-4 align-self-baseline>
+          <span class="price">Rs. {{product.fields.price}}</span>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-grid>
 </ion-content>

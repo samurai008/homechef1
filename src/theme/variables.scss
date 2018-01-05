@@ -63,3 +63,15 @@ time: #21ce41,
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
+
+$grid-breakpoints: (
+  sm: 0,
+  md: 568px,
+  lg: 1024px
+);
+
+$grid-max-widths: (
+  sm: 320px,
+  md: 520px,
+  lg: 960px
+);

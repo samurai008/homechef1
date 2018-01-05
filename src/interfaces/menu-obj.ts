@@ -1,8 +1,8 @@
 export class menu {
   id: number;
   name: string = "Lorem Ipsum";
-  description: 'Small description about the restaurant.';
-  thumbnail: './assets/imgs/engBF.jpg';
-  discount: true;
-  discount_percent: 50;
+  description: string = 'Small description about the restaurant.';
+  thumbnail: string = './assets/imgs/engBF.jpg';
+  discount: boolean = false;
+  discount_percent: number = 50;
 }
