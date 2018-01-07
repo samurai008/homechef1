@@ -2,6 +2,19 @@
 
 add-to-cart {
     position: relative;
+    .button-effect {
+        display: none !important;
+    }
+
+    .button-inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        ion-icon {
+            color: #{map-get($map: $textcolors, $key: light)};
+        }
+    }
     .sect-top {
         background: #{map-get($map: $bgcolors, $key: light)};
         width: 100%;

@@ -19,6 +19,7 @@ import { OrderDetailPage } from '../pages/order-detail/order-detail';
 import { PaymentPage } from '../pages/payment/payment';
 import { BlankPage } from '../pages/blank/blank';
 import { ProfilePage } from '../pages/profile/profile';
+import { StaticTextPage } from '../pages/static-text/static-text';
 
 import { NavBarComponent } from '../components/nav-bar/nav-bar';
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
@@ -54,6 +55,7 @@ import { ProductDetailProvider } from '../providers/product-detail/product-detai
     PaymentPage,
     BlankPage,
     ProfilePage,
+    StaticTextPage,
     NavBarComponent,
     AddToCartComponent,
     ImageSliderComponent,
@@ -86,6 +88,7 @@ import { ProductDetailProvider } from '../providers/product-detail/product-detai
     PaymentPage,
     BlankPage,
     ProfilePage,
+    StaticTextPage,
 
     NavBarComponent,
     AddToCartComponent,

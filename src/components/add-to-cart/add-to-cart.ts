@@ -16,6 +16,7 @@ import { ProductDetailProvider } from '../../providers/product-detail/product-de
 export class AddToCartComponent {
 
   text: string;
+  variants: any;
 
   constructor(public viewCtrl: ViewController,
   private params: NavParams,
@@ -26,7 +27,9 @@ export class AddToCartComponent {
     let id = params.get('id');
     this.pdService.getProductDetail(id)
     .subscribe(
-      (res) => console.log(res),
+      (res) => {console.log(res)
+        this.variants = res;
+      },
       (err) => console.log(err),
       () => {
         console.log('completed pdService')

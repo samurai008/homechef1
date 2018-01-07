@@ -317,6 +317,12 @@ h6 {
         flex-direction: row;
         justify-content: space-around;
         align-items: baseline;
+        div {
+            font-size: 70%;
+        }
+        ion-icon {
+            font-size: smaller;
+        }
     }
 
 
@@ -364,3 +370,24 @@ h6 {
         text-transform: uppercase;
         width: 100%;
     }    
+
+    .price {
+        background-color: #21ce41;
+        font-weight: bolder;
+        color: #ffffff;
+        padding: 2px;
+    }
+
+    .relative {
+        position: relative;
+        .absolute {
+            position: absolute;
+        }
+        .bottom {
+            bottom: 0px;
+        }
+    }
+
+    .p-2 {
+        padding: 2em;
+    }

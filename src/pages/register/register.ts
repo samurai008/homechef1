@@ -56,6 +56,7 @@ export class RegisterPage implements OnInit {
   }
 
   createToast(message) {
+      console.log('creating toast')
       let toast = this.toastCtrl.create({
         message: `${message}`,
         duration: 3000,
@@ -89,7 +90,11 @@ export class RegisterPage implements OnInit {
                   .subscribe((res) => {
                     response = res
                   },
-                (err) => console.log(err),
+                (err) => {
+                  console.log(err)
+                  loading.dismiss();
+                  this.createToast('Invalid creds. Please try again!');
+                },
                 () => {
                     if (response['status'] == "true") {
                       console.log('aaaaaa');

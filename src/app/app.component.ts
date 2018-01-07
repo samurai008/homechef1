@@ -16,6 +16,9 @@ import { OrderListPage } from '../pages/order-list/order-list';
 import { OrderDetailPage } from '../pages/order-detail/order-detail';
 import { PaymentPage } from '../pages/payment/payment';
 import { BlankPage } from '../pages/blank/blank';
+import { StaticTextPage } from '../pages/static-text/static-text';
+
+import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
 
 import { UserStorageProvider } from '../providers/user-storage/user-storage';
 import { ProfilePage } from '../pages/profile/profile';
@@ -43,7 +46,10 @@ export class MyApp {
     this.pages = [
       { title: 'Menu', component: HomePage },
       { title: 'Orders', component: OrderListPage },
-      { title: 'Complete Profile', component:  CompleteProfilePage }
+      { title: 'Profile', component: ProfilePage},
+      { title: 'About Us', component: StaticTextPage},
+      { title: 'Terms of Use', component: StaticTextPage},
+      { title: 'Privacy Policy', component: StaticTextPage},
     ];
 
   }
@@ -58,11 +64,14 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component, {
+      title: page.title
+    });
   }
 
-  goToProfile() {
+  goToProfile(title) {
     this.menuCtrl.close();
-    this.nav.setRoot(ProfilePage);
+    this.nav.setRoot(ProfilePage, 
+    );
   }
 }

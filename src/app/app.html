@@ -9,13 +9,13 @@
                                 <ion-icon name="person"></ion-icon>
                             </div>
                         </ion-col>
-                        <ion-col offset-2>
+                        <ion-col>
                             <span class="u-name">
                                 <div>
                                     {{username}}
                                 </div>
                                 <div>
-                                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                                    <ion-icon name="ios-arrow-dropright-circle"></ion-icon>
                                 </div>
                             </span>
                         </ion-col>
@@ -25,12 +25,15 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-content>
+    <ion-content class="relative">
         <ion-list class="nav-menu-list">
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+               {{p.title}}
+            </button>
         </ion-list>
+        <div class="absolute bottom p-2">
+            <small>Build v 0.1</small>
+        </div>
     </ion-content>
 
 </ion-menu>
