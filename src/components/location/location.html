@@ -5,16 +5,32 @@
             <form>
                 <div class="input">
                     <ion-icon name="pin"></ion-icon>
-                    <input type="text" name="location" id="location" placeholder="ENTER YOUR LOCATION" />
+                    <input type="text"
+                           name="location"
+                           id="location"
+                           placeholder="ENTER YOUR LOCATION" />
                 </div>
-                <button type="submit" class="btn-dark full-w">
-                    select location
-                    <ion-icon name="arrow-forward"></ion-icon>
-                </button>
+                <ion-row align-content-stretch>
+                    <ion-col>
+                        <button type="submit"
+                                class="btn-dark full-w">
+                            select location
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </ion-col>
+                    <ion-col>
+                        <button class="btn-dark full-w"
+                                name="curr-location">
+                            detect location
+                        </button>
+                    </ion-col>
+                </ion-row>
             </form>
         </ion-col>
     </ion-row>
     <div class="close-btn">
-        <button (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+        <button (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+        </button>
     </div>
 </ion-grid>

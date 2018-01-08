@@ -2,8 +2,8 @@
   <nav-bar [title]="title" [hamburger]="on" [location]="on" [showTitle]="off"></nav-bar>
 </ion-header>
 
-<ion-content (click)="dismissModal()" padding>
-  <ion-grid>
+<ion-content (click)="dismissModal()">
+  <ion-grid class="p-0">
     <div *ngFor="let r of restaurants">
       <button class="no-style mt-1" (click)="openRestaurant(r.id)">
         <ion-row class="customCard" align-items-center>
@@ -19,11 +19,11 @@
             <div>
               <h6>{{r.name}}</h6>
             </div>
-            <div class="price">
+            <div>
               <h6>
-                <small>Starts from
-                  <span>Rs. 999</span>
-                </small>
+                <span class="font-75">Starts from
+                  <span class="price">Rs. 999</span>
+                </span>
               </h6>
             </div>
             <div class="pin">
