@@ -315,13 +315,16 @@ h6 {
     .u-name {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
         div {
             font-size: 70%;
         }
         ion-icon {
             font-size: smaller;
+            &[name="person"] {
+                font-size: x-large;
+            }
         }
     }
 
