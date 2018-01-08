@@ -11,11 +11,11 @@
     </ul>
   </div>
   <div><h3>Variants</h3></div>
-  <div>
+  <div class="p-0" *ngFor="let variant of variants">
     <button full ion-button icon-end>
-      <div>Variant 1</div>
+      <div>{{variant.fields.name}}</div>
       <div>
-        <span>Rs. 1000</span>
+        <span>{{variant.fields.price_override}}</span>
         <ion-icon name="md-checkmark-circle-outline"></ion-icon>
       </div>
     </button>
