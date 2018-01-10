@@ -2,26 +2,26 @@
 <ion-grid class="full-w full-h location-grid">
     <ion-row class="full-w">
         <ion-col col-12 col-md-6>
-            <form>
+            <!-- 
+                type of object ngForm => FormGroup
+                #f -> alias of ngForm
+                We can use 'f' in our form
+             -->
+            <form #f="ngForm"
+            (ngSubmit)="onSubmit(f.value)">
                 <div class="input">
                     <ion-icon name="pin"></ion-icon>
                     <input type="text"
                            name="location"
                            id="location"
-                           placeholder="ENTER YOUR LOCATION" />
+                           placeholder="PINCODE" ngModel />
                 </div>
                 <ion-row align-content-stretch>
                     <ion-col>
                         <button type="submit"
                                 class="btn-dark full-w">
-                            select location
+                            Validate PINCODE
                             <ion-icon name="arrow-forward"></ion-icon>
-                        </button>
-                    </ion-col>
-                    <ion-col>
-                        <button class="btn-dark full-w"
-                                name="curr-location">
-                            detect location
                         </button>
                     </ion-col>
                 </ion-row>

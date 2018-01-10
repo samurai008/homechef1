@@ -1,11 +1,11 @@
 <ion-header>
-  <nav-bar [title]="title" [hamburger]="on" [location]="on" [showTitle]="off"></nav-bar>
+  <nav-bar [title]="title" [hamburger]="on" [locationOn]="on" [location]="location" [showTitle]="off"></nav-bar>
 </ion-header>
 
 <ion-content (click)="dismissModal()">
   <ion-grid class="p-0">
     <div *ngFor="let r of restaurants">
-      <button class="no-style mt-1" (click)="openRestaurant(r.id)">
+      <button class="no-style mt-1" (click)="openRestaurant(r.id, r.name)">
         <ion-row class="customCard" align-items-center>
           <div class="discount-badge" *ngIf="r.discount">
             {{r.discount_percent}}%

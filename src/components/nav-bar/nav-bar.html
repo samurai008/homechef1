@@ -11,7 +11,7 @@
     </ion-buttons>
     <ion-title>
       <span *ngIf="showTitle">{{title}}</span>
-      <button class="select-location-btn" (click)="selectLocation()" *ngIf="location">your location</button>
+      <button class="select-location-btn" (click)="selectLocation()" *ngIf="locationOn">{{location}}</button>
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only>

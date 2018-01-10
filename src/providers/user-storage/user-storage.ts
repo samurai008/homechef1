@@ -34,4 +34,26 @@ export class UserStorageProvider {
     .catch(err => console.log(this.storageName + ' removal error: ' + err));
   }
 
+  setPin(value) {
+    let pin = {
+      pin: value
+    };
+    return this.storage.set(this.storageName+'.pin', pin)
+    .then(res => (res))
+    .catch(err => console.log(err))
+  }
+  getPin() {
+    return this.storage.get(this.storageName+'.pin')
+    .then(res => res)
+    .catch(err => console.log(err))
+  }
+
+  getAll() {
+    this.storage.keys()
+    .then(
+      (res) => {
+        console.log(res)
+      }
+    )
+  }
 }

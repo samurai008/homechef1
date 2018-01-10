@@ -18,7 +18,8 @@ export class NavBarComponent {
   @Input() color: string;
   @Input() hamburger: boolean;
   @Input() back: boolean;
-  @Input() location: boolean;
+  @Input() location;
+  @Input() locationOn: boolean;
   @Input() showTitle: boolean;
 
   constructor(private appCtrl: App, private modalCtrl: ModalController) {
