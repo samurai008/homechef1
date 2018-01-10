@@ -55,6 +55,7 @@ export class HomePage {
     this.user.getPin()
     .then(res => this.location = res['pin'])
     // .then(res => console.log(res['pin']))
+    .catch(err => console.log('handled'))
   }
 
   openRestaurant(id, title) {

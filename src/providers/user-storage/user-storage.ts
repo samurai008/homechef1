@@ -56,4 +56,11 @@ export class UserStorageProvider {
       }
     )
   }
+
+  clear() {
+    this.storage.clear()
+    .then(
+      (res) => console.log(res),
+    ).catch(error => console.log(error)) 
+  }
 }
