@@ -58,9 +58,9 @@ export class UserStorageProvider {
   }
 
   clear() {
-    this.storage.clear()
+    return this.storage.clear()
     .then(
-      (res) => console.log(res),
+      res => res,
     ).catch(error => console.log(error)) 
   }
 }

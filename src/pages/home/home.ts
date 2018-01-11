@@ -59,8 +59,6 @@ export class HomePage {
   }
 
   openRestaurant(id, title) {
-    
-
     this.navCtrl.push(RestaurantPage, {
       id: id,
       title: title
@@ -69,7 +67,6 @@ export class HomePage {
 
   dismissModal() {
     console.log(`dismissModal..`)
-    
   }
 
 }
