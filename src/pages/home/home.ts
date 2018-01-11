@@ -12,6 +12,7 @@ import { RestaurantPage } from '../../pages/restaurant/restaurant';
 })
 export class HomePage {
   title = "Home";
+  resTitle: string;
   color = "dark";
   on: boolean = true;
   off: boolean = false;
@@ -19,6 +20,7 @@ export class HomePage {
   menu: any;
   restaurants = [];
   addToCartModal;
+  location = "Your Location";
 
   constructor(public navCtrl: NavController,
   public modalCtrl: ModalController,
@@ -50,20 +52,21 @@ export class HomePage {
   }
 
   ngOnInit() {
-    
+    this.user.getPin()
+    .then(res => this.location = res['pin'])
+    // .then(res => console.log(res['pin']))
+    .catch(err => console.log('handled'))
   }
 
-  openRestaurant(id) {
-    
-
+  openRestaurant(id, title) {
     this.navCtrl.push(RestaurantPage, {
-      id: id
+      id: id,
+      title: title
     });
   }
 
   dismissModal() {
     console.log(`dismissModal..`)
-    
   }
 
 }

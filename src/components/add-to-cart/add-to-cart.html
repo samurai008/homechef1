@@ -1,21 +1,15 @@
 <!-- Generated template for the AddToCartComponent component -->
 <section class="sect-top"></section>
 <section class="info">
-  <div><h3>contents</h3></div>
   <div>
-    <ul>
-      <li><span>Olive</span></li>
-      <li><span>Tomamtoes</span></li>
-      <li><span>Mustard Sauce</span></li>
-      <li><span>Chicken</span></li>  
-    </ul>
+    <p>This place will include the product image</p>
   </div>
-  <div><h3>Variants</h3></div>
-  <div>
+  <div><h3>Options</h3></div>
+  <div class="p-0" *ngFor="let variant of variants">
     <button full ion-button icon-end>
-      <div>Variant 1</div>
+      <div>{{variant.fields.name}}</div>
       <div>
-        <span>Rs. 1000</span>
+        <span>{{variant.fields.price_override}}</span>
         <ion-icon name="md-checkmark-circle-outline"></ion-icon>
       </div>
     </button>

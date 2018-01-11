@@ -7,9 +7,8 @@ page-home {
         background: #fff;
         position: relative;
         border: 1px solid #{map-get($map: $textcolors, $key: light)};
+        border-left: none; border-right: none;
         box-shadow: 1px 1px 5px #cccbc6;
-        border-radius: 5px;
-        margin: 2px 0 !important;
         .discount-badge {
             background: #{map-get($map: $textcolors, $key: blu)};
             width: 50px;
@@ -42,13 +41,6 @@ page-home {
                 border: 1px solid #{map-get($map: $bgcolors, $key: light)};
                 border-radius: 5px;
                 padding: 0;
-            }
-            .price {
-                span {
-                    padding: 2.5px;
-                    color: #{map-get($map: $textcolors, $key: secondary)};
-                    background: #{map-get($map: $textcolors, $key: time)};
-                }
             }
             .pin {
                 &, * {

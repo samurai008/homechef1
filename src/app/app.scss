@@ -78,6 +78,11 @@ h5,
 h6 {
     font-weight: bold;
 }
+.menu-title {
+    div[class^="toolbar-title"] {
+        padding: 0;
+    }
+}
 
 .input {
     padding: 10px;
@@ -315,13 +320,16 @@ h6 {
     .u-name {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
         div {
             font-size: 70%;
         }
         ion-icon {
             font-size: smaller;
+            &[name="person"] {
+                font-size: x-large;
+            }
         }
     }
 
@@ -390,4 +398,19 @@ h6 {
 
     .p-2 {
         padding: 2em;
+    }
+
+    .p-0 {
+        padding: 0;
+    }
+
+    .font-50 {
+        font-size: 50%;
+    }
+    .font-75 {
+        font-size: 75%;
+    }
+
+    .text-right {
+        text-align: right;
     }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserStorageProvider } from '../../providers/user-storage/user-storage';
+import { EnterPage } from '../enter/enter';
 
 /**
  * Generated class for the ProfilePage page.
@@ -27,6 +28,15 @@ export class ProfilePage {
     // this.userStorage.set({token: 1234, userData: {name: "Nilabjo", picture: null}}); 
     this.userStorage.get().then(res => this.setProfileData(res))
     .catch(err => console.log(err));
+  }
+
+  logout() {
+    this.userStorage.clear()
+    .then(
+      (res) => {
+        console.log('storage cleared', res);
+        this.navCtrl.setRoot(EnterPage);
+      });
   }
 
   setProfileData(res) {

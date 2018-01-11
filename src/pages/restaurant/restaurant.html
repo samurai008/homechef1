@@ -13,7 +13,7 @@
 
 <ion-content padding>
   <image-slider [data]="imgData"></image-slider>
-  <ion-grid>
+    <ion-grid>
     <ion-row>
       <ion-col col-4>
         <h3>menu</h3>
@@ -21,11 +21,11 @@
     </ion-row>
     <div *ngFor="let product of productList">
       <ion-row justify-content-between class="menu-list-item" (click)="openProductDetails(product.pk)">
-        <ion-col col-sm-4 align-self-baseline>
+        <ion-col col-6 col-sm-4 align-self-baseline>
           <span class="food-title">{{product.fields.name}}</span>
         </ion-col>
         <ion-col col-4 align-self-baseline>
-          Starts from <span class="price">Rs. {{product.fields.price}}</span>
+          <span class="price">Rs. {{product.fields.price}}</span>
         </ion-col>
       </ion-row>
     </div>

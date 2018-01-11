@@ -35,6 +35,7 @@ export class RestaurantPage {
     private modalCtrl: ModalController
   ) {
     this.productId = navParams.get('id');
+    this.title = navParams.get('title');
     console.log(`${this.productId}`);
     this.productListServ.getProductList(this.productId)
     .subscribe(

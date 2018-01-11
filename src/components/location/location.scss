@@ -1,10 +1,11 @@
 location {
+    background-color: #ffffff;
     background: url('../assets/imgs/bgOne.jpg') no-repeat;
     background-size: cover;
     position: relative;
     .input {
         ion-icon {
-            font-size: 25px;
+            font-size: 15px;
         }
         input {
             width: 80%;
@@ -21,6 +22,17 @@ location {
         ion-icon {
             position: absolute;
             right: 10px;
+        }
+    }
+    button[name="curr-location"] {
+        margin-top: 10px;
+    }
+
+    .invalid-alert{
+        * {
+            .alert-header {
+                text-align: center !important;
+            }
         }
     }
 }

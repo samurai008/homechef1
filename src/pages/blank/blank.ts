@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserStorageProvider } from '../../providers/user-storage/user-storage';
 
 /**
  * Generated class for the BlankPage page.
@@ -15,7 +16,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BlankPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  private userStorage: UserStorageProvider) {
+    this.userStorage.clear();
   }
 
   ionViewDidLoad() {
