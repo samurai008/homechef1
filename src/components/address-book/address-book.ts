@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AddressProvider } from '../../providers/address/address';
 
 /**
  * Generated class for the AddressBookComponent component.
@@ -11,12 +12,22 @@ import { Component } from '@angular/core';
   templateUrl: 'address-book.html'
 })
 export class AddressBookComponent {
+  addressList: any;
 
-  text: string;
-
-  constructor() {
+  constructor(
+    private addressService: AddressProvider
+  ) {
     console.log('Hello AddressBookComponent Component');
-    this.text = 'Hello World';
+    this.addressService.getAddressList()
+    .subscribe(
+      (res) => {
+        this.addressList = res;
+      },
+      (err) => console.log(err),
+      () => {
+        console.log('getAddressList() completed!');
+      }
+    );
   }
 
 }
