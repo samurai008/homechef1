@@ -27,7 +27,7 @@ page-enter {
                         justify-content: center;
 
                         div {
-                            background: #ffffff;
+                            background: #{map-get($map: $bgcolors, $key: dark)};
                             width: 100px;
                             height: 100px;
                             border-radius: 10px;

@@ -84,6 +84,12 @@ h6 {
     }
 }
 
+page-enter {
+    ion-content {
+        background: url('../assets/imgs/bgOne.jpg') !important;
+    }
+}
+
 .input {
     padding: 10px;
     background: #{map-get($bgcolors, light)};
