@@ -93,6 +93,7 @@ export class RegisterPage implements OnInit {
     let isRegister = this.navParams.get('register');
     let status = this.auth.login(username, password, isRegister)
                   .subscribe((res) => {
+                    console.log(res);
                     response = res
                   },
                 (err) => {
@@ -101,10 +102,10 @@ export class RegisterPage implements OnInit {
                   this.createToast('Invalid creds. Please try again!').present();
                 },
                 () => {
-                    if (response['status'] == "true") {
+                    loading.dismiss();
+                    if (response['status'] == "true" || response === true) {
                       console.log('aaaaaa');
                       this.saveUser(username);
-                      loading.dismiss();
                     } else {
                       this.createToast('Invalid creds. Please try again!').present();
                     }
