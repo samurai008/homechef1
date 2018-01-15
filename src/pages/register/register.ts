@@ -90,7 +90,8 @@ export class RegisterPage implements OnInit {
     let loading = this.loadingPopUp('Loggin in');
     loading.present();
     let response;
-    let status = this.auth.login(username, password)
+    let isRegister = this.navParams.get('register');
+    let status = this.auth.login(username, password, isRegister)
                   .subscribe((res) => {
                     response = res
                   },

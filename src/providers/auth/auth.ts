@@ -16,9 +16,11 @@ export class AuthProvider {
   constructor(public http: Http) {
 
   }
-  login(username, password) {
+  login(username, password, register) {
+    let authUri = register ? 'signup' : 'login';
+    console.log(authUri);
     let data = ({username: username,password: password});
-    return this.http.post(`${this.baseUri}/login/`, data)
+    return this.http.post(`${this.baseUri}/${authUri}/`, data)
     .map(res => res.json());
   }
 }
