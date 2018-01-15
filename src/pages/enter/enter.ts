@@ -24,11 +24,17 @@ export class EnterPage {
   }
 
   goToRegister() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(RegisterPage, {
+      title: 'Register',
+      register: true,
+    });
   }
 
   goToLogin() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(RegisterPage, {
+      title: 'Login',
+      register: false
+    });
   }
 
 }

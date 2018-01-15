@@ -21,6 +21,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class RegisterPage implements OnInit {
   loginForm: FormGroup;
+  title: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private toastCtrl: ToastController,
@@ -28,6 +29,7 @@ export class RegisterPage implements OnInit {
     private user: UserStorageProvider,
     private auth: AuthProvider
   ) {
+    this.title = navParams.get('title');
     let loading = this.loadingPopUp('initializing')
     loading.present();
     this.user.get().then((res) => {
@@ -61,6 +63,8 @@ export class RegisterPage implements OnInit {
         message: `${message}`,
         duration: 3000,
         showCloseButton: true,
+        position: 'top',
+        cssClass: 'toast-crunch',
       });
       return toast;
   }
@@ -93,7 +97,7 @@ export class RegisterPage implements OnInit {
                 (err) => {
                   console.log(err)
                   loading.dismiss();
-                  this.createToast('Invalid creds. Please try again!');
+                  this.createToast('Invalid creds. Please try again!').present();
                 },
                 () => {
                     if (response['status'] == "true") {
@@ -101,7 +105,7 @@ export class RegisterPage implements OnInit {
                       this.saveUser(username);
                       loading.dismiss();
                     } else {
-                      this.createToast('Invalid creds. Please try again!');
+                      this.createToast('Invalid creds. Please try again!').present();
                     }
                 }
               )
