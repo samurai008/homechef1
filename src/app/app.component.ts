@@ -41,6 +41,7 @@ export class MyApp {
 
     this.userStorage.get().then(res => this.username = res)
     .catch(err => console.log(err));
+    console.log(this.username)
 
     // used for an example of ngFor and navigation
     this.pages = [
