@@ -27,6 +27,8 @@ import { ImageSliderComponent } from '../components/image-slider/image-slider';
 import { LocationComponent } from '../components/location/location';
 import { PaymentMethodComponent } from '../components/payment-method/payment-method';
 import { AddressBookComponent } from '../components/address-book/address-book';
+import { AddressListComponent } from '../components/address-list/address-list';
+import { AddressInputFormComponent } from '../components/address-input-form/address-input-form';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,6 +40,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AllCategoriesProvider } from '../providers/all-categories/all-categories';
 import { ProductListProvider } from '../providers/product-list/product-list';
 import { ProductDetailProvider } from '../providers/product-detail/product-detail';
+import { AddressProvider } from '../providers/address/address';
 
 @NgModule({
   declarations: [
@@ -56,12 +59,15 @@ import { ProductDetailProvider } from '../providers/product-detail/product-detai
     BlankPage,
     ProfilePage,
     StaticTextPage,
+    
     NavBarComponent,
     AddToCartComponent,
     ImageSliderComponent,
     LocationComponent,
     PaymentMethodComponent,
-    AddressBookComponent
+    AddressBookComponent,
+    AddressListComponent, 
+    AddressInputFormComponent 
   ],
   imports: [
     BrowserModule,
@@ -90,10 +96,13 @@ import { ProductDetailProvider } from '../providers/product-detail/product-detai
     ProfilePage,
     StaticTextPage,
 
+    AddressBookComponent,
     NavBarComponent,
     AddToCartComponent,
     ImageSliderComponent,
-    LocationComponent
+    LocationComponent,
+    AddressListComponent,
+    AddressInputFormComponent 
   ],
   providers: [
     StatusBar,
@@ -104,7 +113,8 @@ import { ProductDetailProvider } from '../providers/product-detail/product-detai
     AuthProvider,
     AllCategoriesProvider,
     ProductListProvider,
-    ProductDetailProvider
+    ProductDetailProvider,
+    AddressProvider
   ]
 })
 export class AppModule {}
