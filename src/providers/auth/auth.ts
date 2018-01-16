@@ -16,9 +16,15 @@ export class AuthProvider {
   constructor(public http: Http) {
 
   }
-  login(username, password) {
-    let data = ({username: username,password: password});
-    return this.http.post(`${this.baseUri}/login/`, data)
+  login(username, password, register) {
+    let authUri = register ? 'signup' : 'login';
+    console.log(authUri);
+    let aliasKey = register ? 'email' : 'username';
+    let data = `{"${aliasKey}": "${username}",
+                  "password": "${password}"
+                }`;
+    console.log(JSON.parse(data))
+    return this.http.post(`${this.baseUri}/${authUri}/`, JSON.parse(data))
     .map(res => res.json());
   }
 }

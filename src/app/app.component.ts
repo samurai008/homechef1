@@ -19,6 +19,7 @@ import { BlankPage } from '../pages/blank/blank';
 import { StaticTextPage } from '../pages/static-text/static-text';
 
 import { AddToCartComponent } from '../components/add-to-cart/add-to-cart';
+import { AddressBookComponent } from '../components/address-book/address-book';
 
 import { UserStorageProvider } from '../providers/user-storage/user-storage';
 import { ProfilePage } from '../pages/profile/profile';
@@ -41,6 +42,7 @@ export class MyApp {
 
     this.userStorage.get().then(res => this.username = res)
     .catch(err => console.log(err));
+    console.log(this.username)
 
     // used for an example of ngFor and navigation
     this.pages = [

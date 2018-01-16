@@ -84,6 +84,12 @@ h6 {
     }
 }
 
+page-enter {
+    ion-content {
+        background: no-repeat center/100% url('../assets/imgs/bgOne.jpg') !important;
+    }
+}
+
 .input {
     padding: 10px;
     background: #{map-get($bgcolors, light)};
@@ -103,6 +109,12 @@ h6 {
         &[type="number"] {
             letter-spacing: 1px;
         }
+    }
+}
+
+.toast-crunch {
+    .toast-wrapper {
+        background: #{map-get($bgcolors, dark)};
     }
 }
 
