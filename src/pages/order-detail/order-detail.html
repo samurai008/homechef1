@@ -21,7 +21,7 @@
       <ion-col col-4>
         item
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-2 text-center>
         QTY
       </ion-col>
       <ion-col col-3>
@@ -32,39 +32,50 @@
       <ion-col col-4>
         {{item.item}}
       </ion-col>
-      <ion-col col-1>
+      <ion-col col-2 text-center>
         {{item.qty}}
       </ion-col>
       <ion-col col-3>
         {{item.price}}
       </ion-col>
     </ion-row>
+    <ion-row justify-content-around class="invoice-row">
+      <ion-col col-4>
+        Total
+      </ion-col>
+      <ion-col col-2 text-center>
+        5
+      </ion-col>
+      <ion-col col-3>
+        5000
+      </ion-col>
+    </ion-row>
   </ion-grid>
-  <hr>
-  <ion-grid>
+
+  <ion-grid class="mt-1">
     <ion-row>
       <ion-col>
         <h4 class="content-title">status</h4>
       </ion-col>
     </ion-row>
+
     <ion-row>
-      <ion-col class="status-space">
+      
+      <div class="status-wrapper">
         <div class="line">
-          <ion-grid class="status-icon-grid" no-padding>
-            <ion-row justify-content-between>
-              <ion-col col-2>
-                <div class="status-icon"></div>
-              </ion-col>
-              <ion-col col-2>
-                <div class="status-icon"></div>
-              </ion-col>
-              <ion-col col-2>
-                <div class="status-icon"></div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
         </div>
-      </ion-col>
+
+        <div class="checkpoint-wrapper">
+          <div class="checkpoint-circ">
+          </div>
+          <div class="checkpoint-circ">
+          </div>
+          <div class="checkpoint-circ">
+          </div>
+        </div>
+
+      </div>
+
     </ion-row>
   </ion-grid>
 </ion-content>

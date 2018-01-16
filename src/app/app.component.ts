@@ -30,7 +30,7 @@ import { ProfilePage } from '../pages/profile/profile';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AddressBookComponent;
+  rootPage: any = EnterPage;
   username: string = 'John Doe';
 
   pages: Array<{title: string, component: any}>;

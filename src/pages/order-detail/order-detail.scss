@@ -7,6 +7,9 @@ page-order-detail {
             text-transform: uppercase;
             font-weight: bolder;
         }
+        &:nth-last-child(2) {
+            @extend .border-btm;
+        }
     }
     .border-btm {
         border-bottom: 1px solid #{map-get($map: $bgcolors, $key: light)};
@@ -17,27 +20,40 @@ page-order-detail {
         text-align: center;
     }
 
-    .line {
-        border: 2px solid #{map-get($map: $bgcolors, $key: element)};
+    .status-wrapper {
         width: 100%;
         position: relative;
-
-        .status-icon-grid {
+        .line {
+            border-top: 1px solid #{map-get($map: $bgcolors, $key: dark)};
             position: absolute;
-            height: 50px;
-            top: -25px;
-            .status-icon {
-                border-radius: 50px;
-                width: 50px;
-                height: 50px;
-                background: #{map-get($map: $textcolors, $key: blu)};
-                margin: 0 auto;
+            top: 12.5px;
+            width: 100%;
+            z-index: -1;
+        }
+        .checkpoint-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .checkpoint-circ {
+                background: #fff;
+                border: 1px solid green;
+                width: 25px;
+                height: 25px;
+                border-radius: 25px;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    display: block;
+                    content: 'something';
+                    font-size: 7px;
+                    top: 35px;
+                    left: -15px;
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    letter-spacing: 1px;
+                }
             }
         }
     }
 
-    .status-space {
-        padding: 15px 20px;
-        margin: 5% 0;
-    }
 }
