@@ -39,8 +39,14 @@ export class LocationComponent {
       }
     ).map(res => res.json())
     .subscribe(
-      res => this.validatePinResponse(res, data),
-      err => this.invalidAlert().present()
+      res => {
+        console.log(res); 
+        this.validatePinResponse(res, data)
+      },
+      err => {
+        console.log(err);
+        this.invalidAlert().present()
+      }
     )
   }
 
@@ -73,6 +79,8 @@ export class LocationComponent {
           this.navCtrl.setRoot(HomePage)
         }
       );
+    } else {
+        this.invalidAlert().present()
     }
   }
 
