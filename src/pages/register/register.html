@@ -52,12 +52,12 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <button class="btn-fb">
-          <div class="flex flex-row-centered flex-column-centered">
-            <div><ion-icon name="logo-facebook"></ion-icon></div>
-            <div>facebook</div>
-          </div>
-        </button>
+                <button (click)="handleFbLogin()" class="btn-fb">
+                    <div class="flex flex-row-centered flex-column-centered">
+                        <div><ion-icon name="logo-facebook"></ion-icon></div>
+                        <div>facebook</div>
+                    </div>
+                </button>
             </ion-col>
             <ion-col>
                 <button class="btn-twitter">

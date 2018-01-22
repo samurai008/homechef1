@@ -6,6 +6,7 @@ import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 import { UserStorageProvider } from '../../providers/user-storage/user-storage';
 import { apiInfo } from '../../interfaces/apiInfo';
 import { AuthProvider } from '../../providers/auth/auth';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
 /**
  * Generated class for the RegisterPage page.
@@ -27,7 +28,8 @@ export class RegisterPage implements OnInit {
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
     private user: UserStorageProvider,
-    private auth: AuthProvider
+    private auth: AuthProvider,
+    private fb: Facebook
   ) {
     this.title = navParams.get('title');
     let loading = this.loadingPopUp('initializing')
@@ -105,7 +107,8 @@ export class RegisterPage implements OnInit {
                     loading.dismiss();
                     if (response['status'] == "true" || response === true) {
                       console.log('aaaaaa');
-                      this.saveUser(username);
+                      this.saveUser({email: username});
+                      this.navCtrl.setRoot(HomePage);
                     } else {
                       this.createToast('Invalid creds. Please try again!').present();
                     }
@@ -117,12 +120,39 @@ export class RegisterPage implements OnInit {
     this.user.set(data).then((res) => {
       console.log(res);
       // console.log(`nada`);
-      this.navCtrl.setRoot(HomePage);
     })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+  }
+
+  handleFbLogin() {
+    let loading = this.loadingPopUp('Loggin in');
+    loading.present();
+
+    this.fb.login(['public_profile', 'email'])
+      .then((res: FacebookLoginResponse) => {
+        console.log('Logged into Facebook!', res)
+        return res['authResponse'];
+      })
+      .then(res => {
+        console.log(res)
+        let token = res['accessToken'];
+        let userId = res['userID'];
+        console.log('userId', userId)
+
+        this.fb.api(
+          "/"+userId+"/?fields=id,email,name,picture,gender",
+          ['public_profile']
+        ).then(res => {
+          this.saveUser(res);
+          loading.dismiss();
+          this.navCtrl.setRoot(HomePage);
+        })
+        .catch(err => console.log(err))
+      })
+      .catch(e => console.log('Error logging into Facebook', e));
   }
 
 }

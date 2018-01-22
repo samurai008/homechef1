@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +27,7 @@ import { ProfilePage } from '../pages/profile/profile';
 @Component({
   templateUrl: 'app.html',
 })
-export class MyApp {
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = EnterPage;
@@ -37,12 +37,11 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
     private storage: Storage, private userStorage: UserStorageProvider,
-    private menuCtrl: MenuController) {
+    private menuCtrl: MenuController,
+    ) {
     this.initializeApp();
+    console.log('app.component.ts constructor()');
 
-    this.userStorage.get().then(res => this.username = res)
-    .catch(err => console.log(err));
-    console.log(this.username)
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -54,6 +53,15 @@ export class MyApp {
       { title: 'Privacy Policy', component: StaticTextPage},
     ];
 
+  }
+
+  ngOnInit() {
+    this.userStorage.get().then(res => {
+      console.log(res);
+      this.username = res['email'];
+      console.log('username', this.username);
+    })
+    .catch(err => console.log(err));
   }
 
   initializeApp() {
