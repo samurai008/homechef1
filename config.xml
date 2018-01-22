@@ -84,4 +84,8 @@
     <plugin name="cordova-sqlite-storage" spec="^2.1.4" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <allow-navigation href="http://192.168.31.190:8100" />
+    <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
+        <variable name="APP_ID" value="1210348775765828" />
+        <variable name="APP_NAME" value="foodezm" />
+    </plugin>
 </widget>

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -114,7 +115,8 @@ import { AddressProvider } from '../providers/address/address';
     AllCategoriesProvider,
     ProductListProvider,
     ProductDetailProvider,
-    AddressProvider
+    AddressProvider,
+    Facebook,
   ]
 })
 export class AppModule {}

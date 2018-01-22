@@ -20,6 +20,7 @@ export class ProfilePage {
   title: string = "Profile";
   true: boolean = true;
   profilePictureExists: boolean = false;
+  email: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private userStorage: UserStorageProvider
@@ -42,6 +43,7 @@ export class ProfilePage {
   setProfileData(res) {
     console.log(res)
     this.profileData = res;
+    this.email = res['email'];
   }
 
   ionViewDidLoad() {
