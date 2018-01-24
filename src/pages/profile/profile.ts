@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserStorageProvider } from '../../providers/user-storage/user-storage';
 import { EnterPage } from '../enter/enter';
+import { CompleteProfilePage } from '../complete-profile/complete-profile';
 
 /**
  * Generated class for the ProfilePage page.
@@ -48,6 +49,10 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+  }
+
+  completeProfile() {
+    this.navCtrl.push(CompleteProfilePage);
   }
 
 }
