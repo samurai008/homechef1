@@ -3,37 +3,28 @@
 </ion-header>
 
 <ion-content (click)="dismissModal()">
-  <ion-grid class="p-0">
-    <div *ngFor="let r of restaurants">
-      <button class="no-style mt-1" (click)="openRestaurant(r.id, r.name)">
-        <ion-row class="customCard" align-items-center>
-          <div class="discount-badge" *ngIf="r.discount">
-            {{r.discount_percent}}%
-          </div>
-          <ion-col col-5>
-            <div class="thumbnail">
-              <img src={{r.thumbnail}}>
-            </div>
-          </ion-col>
-          <ion-col offset-md-1>
-            <div>
-              <h6>{{r.name}}</h6>
-            </div>
-            <div>
-              <h6>
-                <span class="font-75">Starts from
-                  <span class="price">Rs. 999</span>
-                </span>
-              </h6>
-            </div>
-            <div class="pin">
-              <ion-icon name="pin"></ion-icon>
-              Connaught Place
-            </div>
-          </ion-col>
-        </ion-row>
-      </button>
-    </div>
+
+  <ion-grid no-padding style="margin-top: 3em;">
+    <ion-row>
+      <ion-col class="chef-card-wrapper">
+        <div class="chef-picture">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1024px-Placeholder_no_text.svg.png">
+        </div>
+        <ion-list style="z-index:0">
+          <ion-item>
+            John Doe
+          </ion-item>
+          <ion-item>
+            <ion-icon name="star"></ion-icon> 4.9
+          </ion-item>
+          <ion-item>
+            Dishes from <span class="price">Rs.999</span>
+          </ion-item>
+        </ion-list>
+        <button ion-button block (click)="openRestaurant(1, 'John Doe')">Order from John Doe</button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+
 
 </ion-content>

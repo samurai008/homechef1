@@ -46,6 +46,10 @@ export class RegisterPage implements OnInit {
     })
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
+
   loadingPopUp(message) {
     let loading = this.loadingCtrl.create({
       spinner: 'hide',

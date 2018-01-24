@@ -40,10 +40,19 @@ time: #21ce41,
 );
 // App iOS Variables
 // --------------------------------------------------
+
 // iOS only Sass variables can go here
+$item-ios-body-text-font-size: 1.2rem;
+
 // App Material Design Variables
 // --------------------------------------------------
+$item-md-body-text-font-size: 1.2rem;
+$item-md-font-size: 1.2rem;
+$item-md-divider-color: #999;
+
 // Material Design only Sass variables can go here
+
+
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here

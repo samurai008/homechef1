@@ -1,4 +1,16 @@
 page-register {
+    .title {
+        position: relative;
+
+        .back-btn {
+            position: absolute;background: #ffffff;
+            left: 0;
+            ion-icon {
+                font-size: 25px;
+                
+            }
+        }
+    }
     .background {
         background: url('../assets/imgs/bgRegister.jpg') no-repeat;
         background-size: cover;

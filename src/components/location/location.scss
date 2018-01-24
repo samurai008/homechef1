@@ -1,6 +1,5 @@
 location {
-    background-color: #ffffff;
-    background: url('../assets/imgs/bgOne.jpg') no-repeat;
+    background-color: #{map-get($map: $textcolors, $key: light)};
     background-size: cover;
     position: relative;
     .input {

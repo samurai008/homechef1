@@ -1,8 +1,38 @@
 page-home {
+
     .fixed-content {background: #{map-get($map: $bgcolors, $key: light)} !important;} 
     ion-grid {
         margin: 1%;
     }
+
+    .chef-card-wrapper {
+        background: #fff;
+        padding: 1rem !important;
+        @extend .shadow;
+        position: relative;
+
+        .chef-picture {
+            background: #fff;
+            z-index: 1;
+            position: absolute;
+            top: -25px;
+            width: 50px;
+            @extend .shadow;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            ion-icon {
+                font-size: 50px;
+            }
+        }
+
+        ion-list {
+            ion-item {
+                text-align: center;
+            }
+        }
+    }
+
     .customCard {
         background: #fff;
         position: relative;
